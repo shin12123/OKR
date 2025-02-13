@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <title>Фейкові кнопки</title>
 </head>
-<body>
+<body style="background-color: #e6ffe6;">
     <h1>Фейкові кнопки</h1>
-    <p>Деякі кнопки ведуть не туди)</p>
-    <button onclick="alert('БУ')">Скачать Grand Theft Auto VI !!!БЕСПЛАТНО!!!</button>
+    <p>Деякі кнопки ведуть не туди, куди ви очікуєте.</p>
+
+    <!-- Кнопка з фальшивою обіцянкою -->
+    <button onclick="alert('БУ! Ви щойно стали жертвою фішингу!')" 
+            style="background-color: red; color: white; padding: 10px 20px;">
+        Скачать Grand Theft Auto VI !!!БЕСПЛАТНО!!!
+    </button>
+
+    <!-- Кнопка з переходом на небезпечний сайт -->
+    <button onclick="window.location.href='https://parad1st.github.io/Screamer/'" 
+            style="background-color: orange; color: black; margin-top: 10px;">
+        Отримати приз 1000 грн!
+    </button>
+
+    <!-- Плаваючий фрейм -->
+    <h2>Корисна інформація</h2>
+    <iframe src="https://unkd.com.ua/keyisy/bagy-kiberpolicziyi/?gad_source=1&gclid=CjwKCAiAzba9BhBhEiwA7glbatr_Bk8fyzvDscExP7sB_yqlfLVWIcykJU6qwwYAV0fQW2jslMmULhoC6AQQAvD_BwE" 
+            width="800" height="400" 
+            style="border: 3px solid black;" 
+            title="Кіберполіція України">
+    </iframe>
 </body>
 </html>
