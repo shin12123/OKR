@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Підроблені форми</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #e6f7ffd0;">
+<body>
     <h1>Підроблені форми</h1>
     <p>Не вводьте свої дані на незнайомих сайтах!</p>
 
- 
+
     <form>
         Логін: <input type="text" name="username"><br>
         Пароль: <input type="password" name="password"><br>
@@ -16,61 +17,60 @@
     </form>
 
     <!-- Таблиця 3x4 -->
-    <table border="2" cellspacing="5" cellpadding="10" style="margin-top: 20px; text-align: center;">
+    <table>
         <caption><b>Методи фішингу</b></caption>
-        <tr style="background-color: rgb(207, 193, 238);">
-    
+        <tr>
+            <th>№</th>
             <th>Зображення</th>
             <th>Посилання</th>
             <th>Опис</th>
         </tr>
-        
-    <td>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="./images/fishing.png" alt="Фішинг" width="50" height="50">
-            Email-фішинг
-        </div>
-    </td>
-    <td><a href="https://github.com/shin12123/OKR" target="_blank">url?</a></td>
-    <td>Email-фішинг</td>
-</tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <div class="img-text">
+                    <img src="./images/fishing.png" alt="Фішинг" width="50" height="50">
+                    Email-фішинг
+                </div>
+            </td>
+            <td><a href="https://github.com/shin12123/OKR" target="_blank">URL</a></td>
+            <td>Email-фішинг</td>
+        </tr>
 
-<tr>
-    
-    <td>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="./images/Spoofing.png" alt="Фішинг" width="50" height="50">
-            Телефонний фішинг
-        </div>
-    </td>
-    <td><a href="https://github.com/shin12123/OKR" target="_blank">url?</a></td>
-    <td>Телефонний фішинг</td>
-</tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <div class="img-text">
+                    <img src="./images/Spoofing.png" alt="Фішинг" width="50" height="50">
+                    Телефонний фішинг
+                </div>
+            </td>
+            <td><a href="https://github.com/shin12123/OKR" target="_blank">URL</a></td>
+            <td>Телефонний фішинг</td>
+        </tr>
 
-<tr>
-    
-    <td>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="./images/netfishing.png" alt="Фішинг" width="50" height="50">
-            Фішинг у соцмережах
-        </div>
-    </td>
-    <td><a href="https://github.com/shin12123/OKR" target="_blank">url?</a></td>
-    <td>Фішинг у соцмережах</td>
-</tr>
-
+        <tr>
+            <td>3</td>
+            <td>
+                <div class="img-text">
+                    <img src="./images/netfishing.png" alt="Фішинг" width="50" height="50">
+                    Фішинг у соцмережах
+                </div>
+            </td>
+            <td><a href="https://github.com/shin12123/OKR" target="_blank">URL</a></td>
+            <td>Фішинг у соцмережах</td>
+        </tr>
     </table>
 
-    <!-- Складна таблиця -->
     <h2>Складна таблиця: Види фішингу</h2>
-    <table border="2" cellspacing="5" cellpadding="10" style="margin-top: 20px; text-align: center;">
+    <table>
         <colgroup>
-            <col span="2" style="background-color: lightblue;"> 
-            <col style="background-color: lightgreen;"> 
+            <col span="2" style="background-color: lightblue;">
+            <col style="background-color: lightgreen;">
         </colgroup>
         <tr>
-            <th rowspan="2">Тип атаки</th> 
-            <th colspan="2">Деталі</th> 
+            <th rowspan="2">Тип</th>
+            <th colspan="2">Деталі</th>
         </tr>
         <tr>
             <th>Опис</th>
