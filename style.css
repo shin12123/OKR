@@ -31,15 +31,15 @@ a:hover {
     color: #7428f0;
 }
 
-
-nav a {
-    color: #5760b3;
+/*Контекстні селектори (селектори вкладеності)*/
+p a {
+    color: #111cbd;
+    text-decoration: underline;
 }
 
-
-p a {
-    color: #3979b8;
-    text-decoration: underline;
+/*Контекстні селектори (селектори вкладеності)*/
+nav a {
+    color: #158bda;
 }
 
 p {
@@ -151,25 +151,22 @@ table > caption {
     margin-bottom: 10px;
 }
 
+/* Сусідні селектори */
 h1 + p {
     font-size: 22px;
     font-weight: bold;
     color: #444;
-    margin-top: 10px;
-}
-
-h1 + h2 {
-    color: rgb(0, 0, 0);
-    border-bottom: 1px dashed rgb(0, 0, 0);
-    padding-bottom: 5px;
+    margin-top: 20px;
 }
 
 
+/* Дочірні селектори */
 ul > li {
     margin-bottom: 8px;
     list-style-image: url('./images/warning.png');
 }
 
+/* Дочірні селектори */
 ol > li {
     padding: 5px 0;
     color: #444;
@@ -183,6 +180,7 @@ form input {
     border-radius: 5px;
 }
 
+/* Сусідні селектори */
 input + button {
     background-color: #555;  
     color: white;
@@ -192,13 +190,10 @@ input + button {
     cursor: pointer;
 }
 
-.img-text img + span {
-    font-style: italic;
-    margin-left: 10px;
-}
 
 a img {
     border: 2px solid rgb(255, 255, 255);
     transition: opacity 0.3s ease;
-    border-radius: 15px;  /* Скругление углов */
+    border-radius: 35px;  /* Скругление углов */
 }
+
