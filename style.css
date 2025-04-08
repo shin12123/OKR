@@ -25,19 +25,106 @@ a {
     text-decoration: none;
     font-weight: normal;
     transition: color 0.3s ease;
-}
 
+
+
+
+
+
+
+
+
+}
+/* ✅ Псевдокласи для посилань */
 a:hover {
-    color: #7428f0;
+    color: #7428f0; /* Колір при наведенні */
 }
 
-/*Контекстні селектори (селектори вкладеності)*/
+a:link {
+    color: rgb(0, 140, 255); /* Колір для не відвіданих посилань */
+}
+
+a:visited {
+    color: rgba(247, 0, 255, 0.281); /* Колір для відвіданих посилань */
+}
+
+a:active {
+    color: rgb(17, 0, 255); /* Колір при натисканні */
+}
+
+/* Псевдоклас :first-child стилізація першого елемента списку */
+ul li:first-child {
+    color: darkred;
+    font-weight: bold;
+}
+
+/*Псевдоелемент  */
+h1::before {
+    content: "⚠️ ";
+    color: darkorange;
+}
+
+
+h1::after {
+    content: " ⚠️";
+    color: darkorange;
+}
+
+/*Блочний елемент з позиціонуванням (position: absolute) */
+.positioned-box {
+    position: absolute;
+    top: 250px;
+    left: 10px;
+    width: 110px;
+    background-color: #d5e8ff;
+    padding: 10px;
+    border: 2px solid #007acc;
+    border-radius: 10px;
+}
+
+/*Рядковий елемент <span>*/
+.highlight {
+    color: crimson;
+    font-weight: bold;
+    background-color: #ffe0e0;
+}
+
+/* Плаваючий елемент (float)*/
+.float-box img {
+    float: left;
+    margin-right: 15px;
+    border-radius: 8px;
+}
+
+/*Очищення обтікання після float*/
+.float-box::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+p > a {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+/*Контекстні селектори */
 p a {
     color: #111cbd;
     text-decoration: underline;
 }
 
-/*Контекстні селектори (селектори вкладеності)*/
+/*Контекстні селектори */
 nav a {
     color: #158bda;
 }
@@ -170,7 +257,7 @@ ul > li {
 ol > li {
     padding: 5px 0;
     color: #444;
-}
+} 
 
 
 form input {
@@ -196,4 +283,5 @@ a img {
     transition: opacity 0.3s ease;
     border-radius: 35px;  /* Скругление углов */
 }
+
 
