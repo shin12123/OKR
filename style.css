@@ -35,7 +35,7 @@ a {
 
 
 }
-/* ✅ Псевдокласи для посилань */
+/*Псевдокласи для посилань */
 a:hover {
     color: #7428f0; /* Колір при наведенні */
 }
@@ -52,7 +52,7 @@ a:active {
     color: rgb(17, 0, 255); /* Колір при натисканні */
 }
 
-/* Псевдоклас :first-child стилізація першого елемента списку */
+/* Псевдоклас :first-child */
 ul li:first-child {
     color: darkred;
     font-weight: bold;
@@ -96,12 +96,7 @@ h1::after {
     border-radius: 8px;
 }
 
-/*Очищення обтікання після float*/
-.float-box::after {
-    content: "";
-    display: block;
-    clear: both;
-}
+
 
 
 
