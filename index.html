@@ -12,7 +12,7 @@
         <h1 id="welcome">Ласкаво просимо!</h1>
         <p>Будьте уважні до адрес вебсайтів!</p>
     </header>
-    
+
     <main>
         <section class="intro">
             <p class="special-paragraph"><strong>Фішинг</strong> — це підробка веб-ресурсів з метою отримання особистої інформації користувачів.</p>
@@ -31,6 +31,40 @@
         <section class="check-site">
             <p>Перевірити сайти на безпеку можна <a href="https://www.virustotal.com/gui/home/url" target="_blank">тут</a>.</p>
         </section>
+
+        <section class="js-demo">
+            <h2>Демонстрація JavaScript</h2>
+
+            <div class="demo-buttons">
+                <h3>Частина 1:</h3>
+                <button onclick="dialogWithUser()">Діалог</button>
+                <button onclick="showDeveloperInfo('Ганзіна', 'Данііл')">Інфо</button>
+                <button onclick="compareStrings(prompt('Введіть перший рядок'), prompt('Введіть другий рядок'))">Порівняти рядки</button>
+
+                <h3>Частина 2:</h3>
+                <button onclick="changeBackground()">Змінити фон</button>
+                <button onclick="redirectPage()">Перейти</button>
+                <button onclick="useGetElementById()">getElementById</button>
+                <button onclick="useQuerySelectorAll()">querySelectorAll</button>
+                <button onclick="demonstrateProperties()">Властивості DOM</button>
+                <button onclick="modifyDocument()">Змінити документ</button>
+                <button onclick="useDocumentWrite()">document.write</button>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>© 2024 Сайт про кібербезпеку</p>
+    </footer>
+
+    <script>
+        alert('Це внутрішній alert із index.html');
+        if (confirm('Підтвердити, що ви бачите внутрішній скрипт?')) {
+            prompt('Введіть будь-яке слово:', '');
+        }
+    </script>
+
+    
+    <script src="scripts.js" defer></script>
 </body>
 </html>
