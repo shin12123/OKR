@@ -9,8 +9,6 @@ function dialogWithUser() {
         alert("Будьте обережні в інтернеті!");
         return;
     }
-
-    // цикл + умови
     let tips = "";
     for (let i = 1; i <= 3; i++) {
         if (i === 1) tips += "1. Перевіряйте URL-адреси\n";
@@ -73,7 +71,7 @@ function demonstrateProperties() {
     el.innerHTML = "<strong>Змінений через innerHTML</strong>";
     alert("outerHTML:\n"  + el.outerHTML);
     alert("textContent:\n" + el.textContent);
-    const nv = el.firstChild ? el.firstChild.nodeValue : "null";
+    const nv = el.firstChild?.textContent ??"null";
     alert("nodeValue:\n"  + nv);          
 }
 
@@ -81,10 +79,8 @@ function demonstrateProperties() {
 function modifyDocument() {
     const box = document.createElement("div");
     box.style.cssText = "background:#eeffee;padding:10px;margin:10px 0;";
-    box.textContent = "Новий елемент добавлений через DOM API";
+    box.textContent = "Новий елемент добавлений через DOM ";
     document.body.append(box);
-
-    box.append(document.createTextNode(" (доданий текст)"));
 
     const strong = document.createElement("strong");
     strong.textContent = "УВАГА! ";
@@ -113,5 +109,3 @@ function useDocumentWrite() {
     document.write("<button onclick='location.reload()'>Перезавантажити</button>");
 }
 
-
-document.addEventListener("DOMContentLoaded", () => console.log("Сторінка завантажена"));

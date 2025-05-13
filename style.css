@@ -340,3 +340,68 @@ a img {
     font-weight: bold;
     color: #cc0000;
 }
+
+/* Стили для кнопки phish-demo */
+#phish-demo {
+  background-color: #ff5252;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#phish-demo:hover {
+  background-color: #ff3232;
+}
+
+/* Стили для списка фишинга */
+#phish-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  max-width: 300px;
+}
+
+#phish-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+#phish-list li:last-child {
+  border-bottom: none;
+}
+
+#phish-list li.active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+/* Стили для меню с кнопками */
+#phish-menu {
+  margin: 15px 0;
+}
+
+#phish-menu button {
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Цвета для кнопок в меню */
+button[data-act="warn"] {
+  background-color: #ffe0b2;
+}
+
+button[data-act="scan"] {
+  background-color: #c8e6c9;
+}
+
+button[data-act="report"] {
+  background-color: #bbdefb;
+}
