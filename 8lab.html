@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Фішинг: інтерактивна демонстрація</title>
+<style>
+body
+{font-family:sans-serif;margin:40px;
+}
+.hover-highlight{background:#ffeaa7;}
+
+.box{width:260px;height:160px;border:2px dashed #636e72;margin-bottom:20px;display:flex;align-items:center;justify-content:center;}
+
+.draggable{cursor:grab;user-select:none;padding:8px 12px;background:#74b9ff;color:#fff;border-radius:4px;}
+
+.dragging{opacity:.8;cursor:grabbing;position:absolute;z-index:1000;}
+
+.file{background:#b2bec3;}
+
+img.draggable{width:60px;height:60px;object-fit:contain;padding:0;background:transparent;}
+
+</style>
+</head>
+<body>
+<h2>Фішинг — швидка перевірка уважності</h2>
+<p>Наведіть курсор на ознаки фішингового листа — побачите підсвічування. Перетягніть «підозрілі» об’єкти у правильну папку.</p>
+<ul id="menu">
+  <li class="hoverable">Терміновість та погрози</li>
+  <li class="hoverable">Дивна адреса відправника</li>
+  <li class="hoverable">Посилання на фейковий сайт</li>
+</ul>
+<button class="hoverable">Змінити пароль негайно!</button>
+<hr>
+<h3>Перетягніть підозрілий вміст</h3>
+<div class="box dropzone" id="inbox">Вхідні</div>
+<div class="box dropzone" id="spam">Спам</div>
+
+<!-- draggable елементи -->
+<img src="./images/netfishing.png" alt="link" class="draggable" title="Підозріле посилання">
+<div class="draggable" id="phishText">Підозрілий лист</div>
+<div class="draggable file" id="fakeFile">Invoice.pdf</div>
+
+<script>
+// --- hover ---
+document.body.addEventListener('mouseover',e=>{
+  const el=e.target.closest('.hoverable');
+  if(el) el.classList.add('hover-highlight');
+});
+document.body.addEventListener('mouseout',e=>{
+  const el=e.target.closest('.hoverable');
+  if(el && (!e.relatedTarget||!el.contains(e.relatedTarget))) el.classList.remove('hover-highlight');
+});
+
+// --- drag'n'drop ---
+document.querySelectorAll('.draggable').forEach(initDrag);
+function initDrag(elem){
+  elem.addEventListener('mousedown',onDown);
+  elem.ondragstart=()=>false;
+  function onDown(e){
+    e.preventDefault();
+    elem.classList.add('dragging');
+    const shiftX=e.clientX-elem.getBoundingClientRect().left;
+    const shiftY=e.clientY-elem.getBoundingClientRect().top;
+    move(e.pageX,e.pageY);
+    function move(pageX,pageY){
+      elem.style.left=pageX-shiftX+'px';
+      elem.style.top=pageY-shiftY+'px';
+    }
+    const onMove=ev=>move(ev.pageX,ev.pageY);
+    document.addEventListener('mousemove',onMove);
+    elem.addEventListener('mouseup',function up(ev){
+      document.removeEventListener('mousemove',onMove);
+      elem.classList.remove('dragging');
+      elem.hidden=true;
+      const below=document.elementFromPoint(ev.clientX,ev.clientY);
+      elem.hidden=false;
+      const zone=below&&below.closest('.dropzone');
+      if(zone){zone.append(elem);elem.style.left='';elem.style.top='';}
+    },{once:true});
+  }
+}
+</script>
+</body>
+</html>
